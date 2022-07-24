@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-application_name",
+      "2": "I-application_name",
+      "3": "L-application_name",
+      "4": "U-application_name",
+      "5": "B-module_name",
+      "6": "I-module_name",
+      "7": "L-module_name",
+      "8": "U-module_name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-application_name": 1,
+      "I-application_name": 2,
+      "L-application_name": 3,
+      "U-application_name": 4,
+      "B-module_name": 5,
+      "I-module_name": 6,
+      "L-module_name": 7,
+      "U-module_name": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

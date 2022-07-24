@@ -1,0 +1,147 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - i need
+    - want
+    - i want
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - tuff
+
+    
+- intent: buy_coffee
+  examples: |
+    - coffee
+    - coffees
+
+
+- intent: type_coffee
+  examples: |
+   - black
+   - capuccino
+
+- intent: find_code
+  examples: |
+    - Iam Looking for code
+    - code sample
+    - code
+- intent: find_a_poc
+  examples: |
+    - who is the POC
+    - poc
+
+- intent: type_of_pocentry
+  examples: |
+     - technical
+     - looking for technical
+
+- intent: non_technical
+  examples: |
+     - non-technical
+     - looking for non-technical
+
+- intent: non_technical_types
+  examples: |
+     - Timesheet
+     - Timesheets
+
+- intent: others
+  examples: |
+     - Other
+     - Others
+
+- intent: application_nameentry
+  examples: |
+     - [project](application_name)
+     - looking for [project](application_name)
+
+- intent: module_nameentry
+  examples: |
+     - [module](module_name)
+     - looking for [module](module_name)

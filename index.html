@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<body>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+    $( document ).ready(function() {
+        console.log( "document loaded" );
+    });
+ 
+    $( window ).on( "load", function() {
+        window.localStorage.clear();
+    });
+    </script>
+    <script>
+
+    !(function () {
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+          "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+          // Replace 1.x.x with the version that you want
+          (e.async = !0),
+          (e.onload = () => {
+            window.WebChat.default(
+              {
+                initPayload: '/greet',
+                customData: { language: "en" },
+                socketUrl: "http://localhost:5005",
+                title: "WM ChatBoat",
+                // add other props here
+              },
+              null
+            );
+          }),
+          t.insertBefore(e, t.firstChild);
+      })();
+      </script>
+</body>
+</html>

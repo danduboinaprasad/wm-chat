@@ -1,0 +1,129 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - buy_coffee
+  - type_coffee
+  - find_a_poc
+  - find_code
+  - type_of_pocentry
+  - application_nameentry
+  - module_nameentry
+  - non_technical
+  - non_technical_types
+  - others
+
+forms:
+   find_code_form:
+      required_slots:
+      - application_name
+      - module_name
+
+   find_poc_form:
+      required_slots:
+      - application_name
+      - module_name
+
+entities:
+ - application_name
+ - module_name
+ - type_of_poc
+
+slots:
+ application_name:
+  type: text
+  influence_conversation: true
+  mappings:
+    - type: from_entity
+      entity: application_name
+
+ module_name:
+  type: text
+  influence_conversation: true
+  mappings:
+    - type: from_entity
+      entity: module_name
+
+ type_of_poc:
+  type: text
+  influence_conversation: true
+  mappings:
+    - type: from_entity
+      entity: type_of_poc
+
+actions:
+  - find_code_action
+  - find_poc_action
+   
+
+responses:
+  utter_greet:
+  - text: "How can I help you"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_coffee:
+  - text: "which coffee you need"
+
+  utter_poc_name:
+  - text: "you can get in touch with Corner"
+
+  utter_typeof_coffee:
+  - text: "Thanks for Confirmation"
+  utter_ask_application_name:
+  - text: "Please select application name."
+    buttons:
+    - title: "project1"
+      payload: "project1"
+    - title: "project2"
+      payload: "project2"
+
+  utter_ask_module_name:
+  - text: "Please select module name."
+    buttons:
+    - title: "moduleA"
+      payload: "moduleA"
+    - title: "moduleB"
+      payload: "moduleB"
+
+  utter_ask_type_of_poc:
+  - text: "Please select type of support you need"
+    buttons:
+    - title: "technical"
+      payload: "technical"
+    - title: "non-technical"
+      payload: "non-technical"
+
+  utter_ask_non_technical_types:
+  - text: "Please select type of Non-technical support"
+    buttons:
+    - title: "Timesheet"
+      payload: "Timesheet"
+    - title: "Others"
+      payload: "Others"
+
+  utter_ask_others:
+   - text: "if others, Please Mention the kind of support you need."
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

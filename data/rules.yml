@@ -1,0 +1,50 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Say 'coffee' anytime the user challenges
+  steps:
+  - intent: buy_coffee
+  - action: utter_coffee
+
+- rule: Activate find code Form
+  steps:
+    - intent: find_code
+    - action: find_code_form
+    - active_loop: find_code_form
+
+- rule: Submit find Code Form
+  condition:
+    - active_loop: find_code_form
+  steps: 
+    - action: find_code_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: find_code_action
+
+- rule: Activate find Poc Form
+  steps:
+    - intent: type_of_pocentry
+    - action: find_poc_form
+    - active_loop: find_poc_form
+
+- rule: Submit find Poc Form
+  condition:
+    - active_loop: find_code_form
+  steps: 
+    - action: find_poc_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: find_poc_action

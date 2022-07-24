@@ -1,0 +1,58 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: order coffee
+  steps:
+  - intent: buy_coffee
+  - action: utter_coffee
+  - intent: type_coffee
+  - action: utter_typeof_coffee
+
+- story: poc query
+  steps:
+  - intent: find_a_poc
+  - action: utter_ask_type_of_poc
+
+- story: find non techical timesheet poc
+  steps:
+  - intent: non_technical
+  - action: utter_ask_non_technical_types
+  - intent: non_technical_types
+  - action: utter_poc_name
+
+- story: find non techical Others poc
+  steps:
+  - intent: non_technical
+  - action: utter_ask_non_technical_types
+  - intent: others
+  - action: utter_ask_others
+  - intent: affirm
+  - action: utter_poc_name

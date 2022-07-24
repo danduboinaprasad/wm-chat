@@ -1,0 +1,7 @@
+{
+  "rule_only_slots": [],
+  "rule_only_loops": [
+    "find_poc_form",
+    "find_code_form"
+  ]
+}
